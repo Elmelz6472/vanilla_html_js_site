@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GentleTouch Harmony Spa</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+
+        }
+
+        .container {
+            max-width: 800px;
+            width: 90%;
+            /* Wider container */
+            margin: 0 auto;
+        }
+
+        nav {
+            background-color: #26a69a;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            /* Smooth transition on hover */
+        }
+
+        nav a:hover {
+            color: #ffcc80;
+            /* Change color on hover */
+        }
+
+        .landing-text {
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Additional Styles for New Sections */
+        .features-section {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-section {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Update Contact Footer Style */
+        .contact-footer {
+            background-color: #26a69a;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        @import url('styles.css');
+
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="form.html">Reservation</a>
+        <a href="#" onclick="logout()">Log Out</a>
+    </nav>
+
+    <div class="container">
+        <div class="landing-text">
+            <h1>Welcome to GentleTouch Harmony Spa</h1>
+            <p>Indulge in a one-on-one spa experience tailored just for you. Our serene environment and expert
+                practitioners ensure a truly relaxing and rejuvenating time.</p>
+            <p>Escape the ordinary and embrace tranquility. Your journey to relaxation begins here.</p>
+        </div>
+
+        <!-- Additional Sections -->
+        <div class="features-section">
+            <h2>Our Exclusive Features</h2>
+            <p>Discover the unique features that make our spa experience extraordinary.</p>
+            <!-- Add more content as needed -->
+        </div>
+
+        <div class="testimonial-section">
+            <h2>What Our Clients Say</h2>
+            <p>Read testimonials from our satisfied clients who have experienced the magic of our spa.</p>
+            <!-- Add more content as needed -->
+        </div>
+    </div>
+
+    <!-- Updated Contact Footer Style -->
+    <div class="contact-footer">
+        <p>Contact us at: <a href="mailto:info@exclusivespa.com">gentletouchharmony@gmail.com</a></p>
+    </div>
+
+    <script>
+        const isLogged = localStorage.getItem("logged") === "true";
+        if (!isLogged) {
+            window.location.href = 'password.html';
+        }
+
+        function logout() {
+            localStorage.setItem("logged", false);
+            window.location.href = 'password.html';
+        }
+    </script>
+
+</body>
+
+</html>
