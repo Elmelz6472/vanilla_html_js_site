@@ -7,6 +7,7 @@ body {
     /* Soft pink tone */
 }
 
+
 /* Update navigation background color */
 nav {
     background-color: #e57373;
@@ -265,7 +266,8 @@ button:hover {
     }
 
     50% {
-        transform: scale(1.1);
+        transform: scale(1.2);
+        /* Increase the scale for a bigger heart */
     }
 
     100% {
@@ -302,38 +304,6 @@ button:hover {
     animation: floatHeart 2s infinite;
 }
 
-/* Animated Flourish - Swirling Patterns */
-@keyframes swirl {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.swirling-pattern {
-    width: 50px;
-    height: 50px;
-    background-color: #ffb74d;
-    /* Soft orange tone */
-    border-radius: 50%;
-    position: absolute;
-    animation: swirl 8s linear infinite;
-    /* Adjust the duration as needed */
-}
-
-/* Animated Flourish - Animated Divider */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
 
 .animated-divider {
     border-top: 2px solid #ffb74d;
@@ -356,4 +326,66 @@ button:hover {
 .heart-svg-container {
     margin: 0 5px;
     /* Add spacing between hearts */
+}
+
+
+/* Update heading font to Great Vibes */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Great Vibes', cursive;
+}
+
+/* Update navigation link font */
+nav a {
+    font-family: 'Great Vibes', cursive;
+}
+
+/* Update landing-text font */
+.landing-text {
+    font-family: 'Great Vibes', cursive;
+}
+
+/* Update features-section and testimonial-section font */
+.features-section,
+.testimonial-section {
+    font-family: 'Great Vibes', cursive;
+}
+
+/* Update contact-footer font */
+.contact-footer,
+.contact-footer a {
+    font-family: 'Great Vibes', cursive;
+}
+
+/* Additional Sections */
+.features-section h2,
+.testimonial-section h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: 'Great Vibes', cursive;
+    /* Added this line */
+}
+
+.features-section p,
+.testimonial-section p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 0;
+    font-family: 'Great Vibes', cursive;
+    /* Added this line */
+}
+
+/* Additional Styles for New Sections with a sensual touch */
+.heart-svg-container p {
+    font-size: 24px;
+    color: #ff0000;
+    margin-top: 10px;
+    font-family: 'Great Vibes', cursive;
+    /* Added this line */
 }

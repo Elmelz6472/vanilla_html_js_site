@@ -33,17 +33,50 @@ get(passRef).then((snapshot) => {
 window.checkPassword = () => {
     const enteredPassword = document.getElementById('passwordInput').value;
     const errorMessageElement = document.getElementById('errorMessage');
+    const correctCharsElement = document.getElementById('correctChars');
 
+    const playfulSentences = [
+        "Come on BZZbZZZ you got this",
+        "U really thought I was that dumb",
+        "TITTIEESSSS",
+        "aaoiinn you're really pretty like that",
+        "hahha saik",
+        "That guess was soooo bad",
+        "Is your password hiding in plain sight?",
+        "You're getting warmer... or colder?",
+        "Maybe try a dance move for good luck!",
+        "Did you consult the spa spirits for the password?",
+        "Damm ca cetait un move cst (no offense)",
+        "you might need a new guess at this point",
+        "can you tell i reallyyy love titties",
+        "wow.",
+        "Are you trying to unlock a secret spa dance party?",
+        "Getting closer! Or maybe not...",
+        "Feeling the spa vibes yet? Password might be too!",
+        "you could try induction mathematique"
+    ];
 
-    console.log("Entered Password:", enteredPassword);
+    const pass = "++InfiniteLoopOfLoveForBzzBzz";
+    let correctCharsCount = 0;
+
+    for (let i = 0; i < enteredPassword.length && i < pass.length; i++) {
+        if (enteredPassword[i] === pass[i]) {
+            correctCharsCount++;
+        } else {
+            break;
+        }
+    }
 
     if (enteredPassword === pass) {
-        console.log("Correct password. Redirecting...");
         window.location.href = 'index.html';
         localStorage.setItem("logged", "true");
     } else {
-        console.log("Incorrect password. Please try again.");
-        errorMessageElement.textContent = "Come on you really thought it was gonna be that easy (that's an L).";
+        const randomIndex = Math.floor(Math.random() * playfulSentences.length);
+        const randomSentence = `${playfulSentences[randomIndex]} (${randomIndex + 1}/${playfulSentences.length})`;
+        errorMessageElement.textContent = randomSentence;
+        correctCharsElement.textContent = `Correct characters: ${correctCharsCount}/?`;
     }
 };
 
+
+//Passwords:123recurrence
