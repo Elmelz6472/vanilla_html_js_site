@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation Popup</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgba(255, 80, 45, 0.9);
+            /* Semi-transparent black overlay */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .confirmation-popup {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            text-align: center;
+            max-width: 400px;
+        }
+
+        h2 {
+            color: #ff0000;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .love-messages {
+            margin-top: 20px;
+        }
+
+        .heart {
+            color: #ff0000;
+            font-size: 24px;
+        }
+
+        /* Cute button styles */
+        .back-to-home-button {
+            background-color: #ffcc80;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .back-to-home-button:hover {
+            background-color: #ff9966;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="confirmation-popup">
+        <h2>See You That Day!</h2>
+        <p>Your reservation is confirmed, and we can't wait to make it a special day for you!</p>
+        <div class="love-messages">
+            <p>You're the light of my life <span class="heart">&#10084;</span></p>
+            <p>Every moment with you is a treasure <span class="heart">&#10084;</span></p>
+            <p>Can't wait to share this special day with you <span class="heart">&#10084;</span></p>
+            <!-- Add more love messages and hearts as needed -->
+        </div>
+        <!-- Cute button to go back to the home page -->
+        <button class="back-to-home-button" onclick="window.location.href='index.html'">Back to Home Page</button>
+    </div>
+</body>
+
+</html>

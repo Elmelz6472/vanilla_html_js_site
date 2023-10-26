@@ -11,11 +11,16 @@
 <body>
 <nav>
     <a href="index.html">Home</a>
-    <a href="form.html">Reservation</a>
+    <!-- <a href="form.html">Reservation</a> -->
     <a href="#" onclick="logout()">Log Out</a>
-
-
 </nav>
+
+<div id="confirmationPopup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <p>Reservation submitted successfully!</p>
+    </div>
+</div>
 
 
 <script>
@@ -92,7 +97,6 @@
 <script type="module">
     // Import Firebase SDKs
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-analytics.js";
     import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
 
     // Firebase configuration
@@ -108,10 +112,35 @@
 
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
     const database = getDatabase();
 
-    // Function to submit form data to Firebase
+
+    // Function to show the popup
+        function showPopup() {
+            const confirmationPopup = document.getElementById('confirmationPopup');
+            confirmationPopup.style.display = 'block';
+
+            // Close the popup if clicked outside of it
+            window.onclick = function (event) {
+                if (event.target === confirmationPopup) {
+                    closePopup();
+                }
+            };
+        }
+
+        // Function to close the popup
+        function closePopup() {
+            const confirmationPopup = document.getElementById('confirmationPopup');
+            confirmationPopup.style.display = 'none';
+
+            // Remove the click event on window to avoid interference
+            window.onclick = null;
+        }
+
+
+
+
+
     // Function to submit form data to Firebase
     function submitForm(e) {
         e.preventDefault(); // Prevent default form submission
@@ -130,6 +159,9 @@
         push(reservationsRef, data);
 
         console.log("Form submitted");
+
+        // Show confirmation popup
+        showPopup();
 
         // Optionally, you can reset the form after submission
         form.reset();

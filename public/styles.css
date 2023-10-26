@@ -1,55 +1,130 @@
-/* styles.css */
-
+/* Update background color to a sensual tone */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
-
+    background-color: #f3e3e3;
+    /* Soft pink tone */
 }
 
-.container {
-    max-width: 800px;
-    width: 90%;
-    /* Wider container */
-    margin: 0 auto;
-}
-
+/* Update navigation background color */
 nav {
-    background-color: #26a69a;
+    background-color: #e57373;
+    /* Light red tone */
     padding: 10px;
     text-align: center;
 }
 
+/* Update navigation link color */
 nav a {
     color: #fff;
     text-decoration: none;
     margin: 0 15px;
     font-weight: bold;
     transition: color 0.3s ease;
-    /* Smooth transition on hover */
 }
 
 nav a:hover {
-    color: #ffcc80;
-    /* Change color on hover */
+    color: #ffb74d;
+    /* Soft orange tone on hover */
 }
 
+/* Update landing-text background color and box shadow */
 .landing-text {
     text-align: center;
     margin: 20px;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 218, 185, 0.9);
+    /* Peachpuff with transparency */
     border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    /* Softer shadow */
 }
 
+/* Update features-section and testimonial-section hover styles */
+.features-section:hover,
+.testimonial-section:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Update contact-footer background color and link color */
+.contact-footer {
+    background-color: #e57373;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.contact-footer a {
+    color: #ffb74d;
+    text-decoration: none;
+    border-bottom: 2px solid #ffb74d;
+    transition: color 0.3s ease;
+}
+
+.contact-footer a:hover {
+    color: #fff;
+}
+
+/* Additional Styles for New Sections with a sensual touch */
+.features-section,
+.testimonial-section {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: rgba(255, 218, 185, 0.9);
+    /* Peachpuff with transparency */
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.features-section h2,
+.testimonial-section h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.features-section p,
+.testimonial-section p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+
+.heart-svg-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.heart-svg-container svg {
+    fill: #ff0000;
+    /* Bright red color */
+}
+
+.heart-svg-container p {
+    font-size: 24px;
+    color: #ff0000;
+    margin-top: 10px;
+}
+
+
+/* Add these styles to your styles.css */
+
 .reservation-section {
-    background-color: #fff;
+    background-color: rgba(255, 218, 185, 0.9);
+    /* White background with slight transparency */
     padding: 20px;
     border-radius: 12px;
-    /* Rounder corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 80%;
     /* Wider form section */
     margin: 20px auto;
@@ -66,7 +141,6 @@ label {
     /* Bolder labels */
 }
 
-select,
 input {
     width: 100%;
     padding: 10px;
@@ -79,7 +153,8 @@ input {
 }
 
 button {
-    background-color: #4caf50;
+    background-color: #ff0000;
+    /* Red button color */
     color: white;
     padding: 12px;
     /* Larger button padding */
@@ -93,88 +168,192 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #cc0000;
+    /* Darker red on hover */
 }
 
-
-.contact-footer {
-    background-color: #26a69a;
-    /* Match the theme color */
-    color: #fff;
+/* Additional Styles for Suggestions Card and Special Surprise Container */
+.suggestion-card {
     text-align: center;
-    padding: 10px;
-    position: fixed;
-    /* Changed to fixed for sticky footer */
-    bottom: 0;
-    width: 100%;
-    margin-top: 40px;
-    /* Add space between container and footer */
+    /* Center the text */
+    background-color: rgba(255, 218, 185, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
 }
 
-.contact-footer a {
-    color: #ffcc80;
-    /* Cute color for the hyperlink */
-    text-decoration: none;
-    border-bottom: 2px solid #ffcc80;
-    /* Underline effect */
-    transition: color 0.3s ease;
-    /* Smooth transition on hover */
-}
-
-.contact-footer a:hover {
-    color: #fff;
-    /* Change color on hover */
-}
-
-/* Add these styles to your styles.css */
-
-.password-container {
-    text-align: center;
-    margin-top: 20%;
-}
-
-.password-container h2 {
-    font-size: 24px;
-    color: #333;
+.suggestion-card h3 {
+    color: #ff0000;
     margin-bottom: 10px;
 }
 
-.password-container p {
+.suggestion-card ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.suggestion-card li {
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* Additional Styles for Special Surprise Container */
+.special-surprise-container {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: rgba(255, 218, 185, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    /* Dark text color */
+}
+
+.special-surprise-container h2 {
+    font-size: 18px;
+    color: #ff0000;
+    /* Red color for the heading */
+    margin-bottom: 10px;
+}
+
+.special-surprise-container p {
     font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 0;
     color: #666;
-    margin-bottom: 20px;
+    /* Dark gray text color */
 }
 
-.input-container {
+
+/* ... Your existing CSS ... */
+
+/* Update features-section and testimonial-section hover styles */
+.features-section:hover,
+.testimonial-section:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* New styles for reservation section */
+.reservation-section:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Additional Styles for Suggestions Card and Special Surprise Container */
+.suggestion-card,
+.special-surprise-container {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.suggestion-card:hover,
+.special-surprise-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Love-themed animations */
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Apply heartbeat animation to the heart in the reservation section */
+.heart-svg-container svg {
+    fill: #ff0000;
+    /* Bright red color */
+    animation: heartbeat 1s infinite;
+}
+
+/* Apply floatHeart animation to the hearts in the suggestion card */
+.suggestion-card li::before {
+    content: '❤️';
+    display: inline-block;
+    color: #ff0000;
+    animation: floatHeart 2s infinite;
+}
+
+/* Animated Flourish - Swirling Patterns */
+@keyframes swirl {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.swirling-pattern {
+    width: 50px;
+    height: 50px;
+    background-color: #ffb74d;
+    /* Soft orange tone */
+    border-radius: 50%;
+    position: absolute;
+    animation: swirl 8s linear infinite;
+    /* Adjust the duration as needed */
+}
+
+/* Animated Flourish - Animated Divider */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.animated-divider {
+    border-top: 2px solid #ffb74d;
+    /* Soft orange tone */
+    width: 100%;
+    position: relative;
+    animation: fadeIn 2s ease;
+    /* Adjust the duration as needed */
+}
+
+.hearts-container {
     display: flex;
+    /* Make it a flex container */
     justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    /* Add some margin for spacing */
+    /* Center the hearts horizontally */
+    margin-top: 20px;
+    /* Adjust as needed */
 }
 
-input {
-    padding: 12px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
+.heart-svg-container {
+    margin: 0 5px;
+    /* Add spacing between hearts */
 }
-
-button {
-    padding: 12px 20px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-
-
-
