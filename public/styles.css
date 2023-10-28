@@ -4,14 +4,13 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f3e3e3;
-    /* Soft pink tone */
+    background: linear-gradient(to bottom, #ffccd2, #ffdde1);
 }
 
 
 /* Update navigation background color */
 nav {
     background-color: #e57373;
-    /* Light red tone */
     padding: 10px;
     text-align: center;
 }
@@ -27,7 +26,6 @@ nav a {
 
 nav a:hover {
     color: #ffb74d;
-    /* Soft orange tone on hover */
 }
 
 /* Update landing-text background color and box shadow */
@@ -304,15 +302,6 @@ button:hover {
     animation: floatHeart 2s infinite;
 }
 
-
-.animated-divider {
-    border-top: 2px solid #ffb74d;
-    /* Soft orange tone */
-    width: 100%;
-    position: relative;
-    animation: fadeIn 2s ease;
-    /* Adjust the duration as needed */
-}
 
 .hearts-container {
     display: flex;

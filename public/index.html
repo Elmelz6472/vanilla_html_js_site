@@ -6,102 +6,252 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GentleTouch Harmony Spa</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            cursor: url('data:image/svg+xml,%3Csvg fill="red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"%3E%3Cpath d="M12 21.35l-1.45-1.32C6.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C15.09 3.81 16.76 3 18.5 3 21.58 3 24 5.42 24 8.5c0 3.78-4.4 6.86-8.55 11.54L12 21.35z"%3E%3C/path%3E%3C/svg%3E'), auto;
+            font-family: 'Great Vibes', cursive;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #ffccd2, #ffdde1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: auto;
+            position: relative;
+        }
+
+        nav {
+            background-color: #ff4081;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+            position: fixed;
+            top: 0px;
+            width: 100%;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            cursor: url('data:image/svg+xml,%3Csvg fill="red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"%3E%3Cpath d="M12 21.35l-1.45-1.32C6.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C15.09 3.81 16.76 3 18.5 3 21.58 3 24 5.42 24 8.5c0 3.78-4.4 6.86-8.55 11.54L12 21.35z"%3E%3C/path%3E%3C/svg%3E'), auto;
+            color: #ffb74d;
+        }
+
+        .landing-text {
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(255, 218, 185, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards, floatContainer 5s infinite alternate;
+            transition: transform 4s ease, box-shadow 4s ease;
+        }
+
+        .landing-text:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes floatContainer {
+            0% {
+                transform: translateY(0) scale(1);
+                background-color: rgba(255, 255, 255, 0.9);
+                /* Initial background color */
+            }
+
+            100% {
+                transform: translateY(-20px) scale(1.1);
+                background-color: rgba(255, 223, 225, 0.9);
+                /* Slight shade of pink */
+            }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes expandCenter {
+            0% {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            50% {
+                padding: 30px;
+                margin: 20px;
+            }
+
+            100% {
+                padding: 20px;
+                margin: 10px;
+            }
+        }
+
+        h1 {
+            color: #ff3366;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #333;
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            background-color: #ff4081;
+            /* Pinkish color */
+            color: #fff;
+            padding: 12px 24px;
+            border: 2px solid #ff4081;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            cursor: url('data:image/svg+xml,%3Csvg fill="red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"%3E%3Cpath d="M12 21.35l-1.45-1.32C6.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C15.09 3.81 16.76 3 18.5 3 21.58 3 24 5.42 24 8.5c0 3.78-4.4 6.86-8.55 11.54L12 21.35z"%3E%3C/path%3E%3C/svg%3E'), auto;
+            background-color: #ff005b;
+            /* Darker pink on hover */
+            color: #ffffff;
+            /* White text on hover */
+            transform: scale(1.05);
+            /* Slight scale increase on hover */
+            border-color: #ff001e;
+            /* Border color change on hover */
+        }
+
+        /* Love-themed animations */
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Apply heartbeat animation to the heart in the reservation section */
+        .heart-svg-container svg {
+            fill: #ff3366;
+            animation: heartbeat 1s infinite;
+        }
+
+        /* Heart Animation */
+        .hearts-container {
+            position: absolute;
+            bottom: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .heart {
+            width: 50px;
+            height: 50px;
+            margin: 0 10px;
+            animation: floatHeart 2s infinite;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50" fill="%23ff3366"><path d="M12 21.35l-1.45-1.32C5.4 14.25 2 11.05 2 7.25 2 4.42 4.42 2 7.25 2c1.74 0 3.41.81 4.75 2.09C13.34 2.81 15 2 16.75 2 19.58 2 22 4.42 22 7.25c0 3.8-3.4 7-8.55 12.8L12 21.35z"/></svg>');
+            background-size: contain;
+            display: block;
+        }
+
+        @keyframes floatHeart {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-30px) rotate(10deg);
+            }
+        }
+
+        footer {
+            background-color: #ff4081;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 
 <body>
-
     <nav>
-        <a href="#">Home</a>
-        <a href="form.html" onclick="return false;" disabled>Massage Reservation</a>
-        <a href="day4me_reservation.html">Day for Me Reservation</a>
+        <a href="letter.html">READ ME</a>
         <a href="#" onclick="logout()">Log Out</a>
     </nav>
 
-    <div class="container" >
-        <div class="landing-text">
-            <h1>Welcome to GentleTouch Harmony Spa</h1>
-            <p>Indulge in a one-on-one spa experience tailored just for you. Our sensual environment and expert
-                practitioners ensure a truly intimate and rejuvenating time.</p>
-            <p>Escape the ordinary and embrace the allure of tranquility. Your journey to relaxation begins here.</p>
-        </div>
-
-        <!-- Additional Sections -->
-        <div class="features-section">
-            <h2>Our Sensual Features</h2>
-            <p>Discover the unique and sensual features that make our spa experience extraordinary.</p>
-            <!-- Add more content as needed -->
-        </div>
-
-        <div class="testimonial-section">
-            <h2>What Our Clients Say</h2>
-            <p>Read testimonials from our satisfied clients who have experienced the enchantment of our spa.</p>
-            <!-- Add more content as needed -->
-        </div>
+    <div class="landing-text">
+        <h1>Welcome to GentleTouch Harmony Spa</h1>
+        <p>Indulge in the magic of relaxation where love and tranquility intertwine. Our skilled therapists are here to
+            provide you with a rejuvenating experience like no other.</p>
+        <p>Explore our massage treatments and discover a world of serenity.</p>
+        <button class="cta-button">Book Your Massage</button>
     </div>
 
-    <!-- Updated Contact Footer Style -->
-    <div class="contact-footer">
-        <p>Contact us at: <a href="mailto:info@exclusivespa.com">gentletouchharmony@gmail.com</a></p>
-    </div>
-
-<!-- Heart Container -->
-<div class="hearts-container">
-    <div class="heart-svg-container">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50" fill="#ff0000">
-            <path
-                d="M12 21.35l-1.45-1.32C5.4 14.25 2 11.05 2 7.25 2 4.42 4.42 2 7.25 2c1.74 0 3.41.81 4.75 2.09C13.34 2.81 15 2 16.75 2 19.58 2 22 4.42 22 7.25c0 3.8-3.4 7-8.55 12.8L12 21.35z" />
-        </svg>
-    </div>
-
-    <!-- Add more hearts as needed -->
-    <div class="heart-svg-container">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50" fill="#ff0000">
-            <path
-                d="M12 21.35l-1.45-1.32C5.4 14.25 2 11.05 2 7.25 2 4.42 4.42 2 7.25 2c1.74 0 3.41.81 4.75 2.09C13.34 2.81 15 2 16.75 2 19.58 2 22 4.42 22 7.25c0 3.8-3.4 7-8.55 12.8L12 21.35z" />
-        </svg>
-    </div>
-
-    <!-- Add more hearts as needed -->
-    <div class="heart-svg-container">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50" fill="#ff0000">
-            <path
-                d="M12 21.35l-1.45-1.32C5.4 14.25 2 11.05 2 7.25 2 4.42 4.42 2 7.25 2c1.74 0 3.41.81 4.75 2.09C13.34 2.81 15 2 16.75 2 19.58 2 22 4.42 22 7.25c0 3.8-3.4 7-8.55 12.8L12 21.35z" />
-        </svg>
-    </div>
-
-    <!-- Add more hearts as needed -->
-    <div class="heart-svg-container">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50" fill="#ff0000">
-            <path
-                d="M12 21.35l-1.45-1.32C5.4 14.25 2 11.05 2 7.25 2 4.42 4.42 2 7.25 2c1.74 0 3.41.81 4.75 2.09C13.34 2.81 15 2 16.75 2 19.58 2 22 4.42 22 7.25c0 3.8-3.4 7-8.55 12.8L12 21.35z" />
-        </svg>
-    </div>
-
-    <!-- Add more hearts as needed -->
-    <div class="heart-svg-container">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50" fill="#ff0000">
-            <path
-                d="M12 21.35l-1.45-1.32C5.4 14.25 2 11.05 2 7.25 2 4.42 4.42 2 7.25 2c1.74 0 3.41.81 4.75 2.09C13.34 2.81 15 2 16.75 2 19.58 2 22 4.42 22 7.25c0 3.8-3.4 7-8.55 12.8L12 21.35z" />
-        </svg>
+    <div class="landing-text">
+        <h1>Unwind and Recharge</h1>
+        <p>Escape the hustle and bustle of everyday life. Treat yourself to a day of serenity and self-care. Our expert
+            therapists are dedicated to helping you relax and recharge.</p>
+        <p>Book your massage now and experience the ultimate bliss.</p>
+        <button class="cta-button">Discover Treatments</button>
     </div>
 
 
-</div>
+    <div class="hearts-container">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
 
+</body>
 
-    <script>
-        const isLogged = localStorage.getItem("logged") === "true";
-        if (!isLogged) {
-            window.location.href = 'password.html';
-        }
-
-        function logout() {
+<script>
+     function logout() {
             localStorage.setItem("logged", false);
             window.location.href = 'password.html';
         }
-    </script>
-
-</body>
+</script>
 
 </html>
