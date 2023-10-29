@@ -7,53 +7,6 @@
     <title>Handwritten Letter</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
     <style>
-        body {
-            font-family: 'Great Vibes', cursive;
-            margin: 0;
-            background: linear-gradient(to bottom, #ffccd2, #ffdde1);
-            overflow: hidden;
-        }
-
-        #blurred-bg {
-            filter: blur(10px);
-            background-image: url('IMG_6095.png');
-            background-size: cover; /* Make the background image cover the entire screen */
-            background-position: center;
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            margin: 0; /* Remove default margin */
-        }
-
-        .letter-container:hover {
-            opacity: 0.9;
-        }
-
-
-        .letter-container {
-            opacity: 0.5;
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-            background-color: rgba(255, 218, 185, 0.9);
-            border-radius: 12px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            line-height: 1.6;
-            cursor: pointer;
-            transition: opacity 0.5s ease; /* Add transition for smooth effect */
-        }
-
-        p {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .signature {
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 20px;
-        }
 
         .return-button {
             margin-top: 30px;
@@ -76,7 +29,7 @@
         }
 
         /* Modal Styles */
-       .modal {
+        .modal {
             display: none;
             position: fixed;
             top: 0;
@@ -123,55 +76,155 @@
 
 
 
-    /* New styles for "Return to previous Page" button */
-    .return-btn {
-        background-color: #555;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        font-weight: bold;
-        font-size: 16px;
-        text-decoration: none; /* Remove underline from anchor tag */
-        display: inline-block; /* Make the button a block-level element */
-        transition: background-color 0.3s ease;
-    }
+        /* New styles for "Return to previous Page" button */
+        .return-btn {
+            background-color: #555;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            text-decoration: none;
+            /* Remove underline from anchor tag */
+            display: inline-block;
+            /* Make the button a block-level element */
+            transition: background-color 0.3s ease;
+        }
 
-    .return-btn:hover {
-        background-color: #333;
-    }
+        .return-btn:hover {
+            background-color: #333;
+        }
+
+
+        body {
+    font-family: 'Great Vibes', cursive;
+    margin: 0;
+    background: linear-gradient(to bottom, #ffccd2, #ffdde1);
+    overflow: hidden;
+        }
+
+        #blurred-bg {
+            filter: blur(10px);
+            background-image: url('IMG_6095.png');
+            background-size: cover;
+            background-position: center;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            margin: 0;
+        }
+
+        .letter-container:hover {
+            opacity: 0.95;
+        }
+
+        .letter-container {
+            opacity: 0.5;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: rgba(255, 218, 185, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            line-height: 1.6;
+            cursor: pointer;
+            transition: opacity 0.5s ease;
+            font-size: 18px;
+            letter-spacing: 1px;
+            word-spacing: 2px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .signature {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        .return-button {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .return-button a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff4081;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .return-button a:hover {
+            background-color: #e6004c;
+        }
+
+
+        .letter-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 20px;
+        }
+
+        .note {
+            text-align: left;
+        }
+
+        .closure {
+            text-align: right;
+        }
+
+
+
     </style>
 </head>
 
 <body>
     <div id="blurred-bg">
-        <br><br><br>
-    <!-- Letter Content -->
-    <div class="letter-container">
-        <p>Hi BzzBzz</p>
+<br>
+        <!-- Letter Content -->
+        <div class="letter-container">
+            <p>Hi BzzBzz</p>
 
-        <p>I hope this letter finds you well. As I sit down to write, the gentle touch of the pen on paper brings back
-            memories of simpler times. In the midst of digital chaos, there's something special about a handwritten
-            note.</p>
+            <p>I hope that this letter finds you well.</p>
 
-        <p>The spa is buzzing with the warmth of our clients, much like the vibrant colors of the sunset. It's a
-            testament to the magic of relaxation we've created together. Each moment spent in tranquility, a brushstroke
-            on the canvas of life.</p>
+            <p>Crazy few weeks ayy. I think we can both agree that these past few days haven't been the best for either
+                of us. We had
+                so much things to do we haven't really taken the time to connect with each other like we used to before.
+                With you being
+                down since the exam of stats (im not blaming you do not worry) and me being just focused on school, it
+                hasn't been the
+                best of time for us.</p>
 
-        <p>Thank you for being part of GentleTouch Harmony Spa. Your presence adds a unique melody to our symphony of
-            serenity. Together, we've crafted an oasis where love and tranquility intertwine.</p>
+            <p>I hope that now that all of this stuff is over we can go back to how we were before, going to school,
+                eating poutines,
+                watching netflix at Odyssey because truth to be told I really missed that these past weeks. And I also
+                hope we can go
+                back to doing dumb shit like we used too (maya & malik adventures bitches)</p>
 
-        <p>As we move forward, let's continue this journey of unwinding, recharging, and discovering the bliss within.
-            Our skilled therapists are here to ensure each visit is a rejuvenating experience like no other.</p>
+            <p>Looking forward to brighter days and creating more beautiful memories together. Here's to us and the
+                adventures that
+                await. Take care and talk to you soon.</p>
 
-        <p>Feel free to explore our latest treatments and indulge in the magic of relaxation. Book your next visit and
-            let the stresses of the world melt away.</p>
+            <p>It's as you said during the summer, you're my favorite person! And I can only wish the best for the
+                future 🐝</p>
 
-        <p>Wishing you peace and serenity,</p>
-    </div>
+            <div class="letter-footer">
+                <p class="note">PS: It's seriously one of the best pics we have, tbh</p>
+                <p class="closure">Le Melzzz</p>
+            </div>
+        </div>
 
-        <!-- Return Button -->
         <div class="return-button">
             <a href="#" onclick="history.back()">Return to Previous Page</a>
         </div>
@@ -180,8 +233,6 @@
 
 
 
-    <br><br>
-<!-- Password Modal -->
     <div id="passwordModal" class="modal">
         <div class="modal-content">
             <h2>Password Required</h2>
@@ -193,26 +244,26 @@
         </div>
     </div>
 
-  <script>
+    <script>
 
-     function toggleOpacity() {
+        function toggleOpacity() {
             var letterContainer = document.querySelector('.letter-container');
             var currentOpacity = parseFloat(window.getComputedStyle(letterContainer).opacity);
-            letterContainer.style.opacity = currentOpacity === 0.9 ? 0.4 : 0.9;
+            letterContainer.style.opacity = currentOpacity === 0.95 ? 0.25 : 0.95;
         }
 
 
-     window.onload = function () {
+        window.onload = function () {
             document.getElementById('passwordModal').style.display = 'flex';
         }
 
-       function checkPassword() {
+        function checkPassword() {
             var passwordInput = document.getElementById('passwordInput');
             var tryAgainMessage = document.getElementById('tryAgainMessage');
             var password = passwordInput.value;
 
-            // Replace 'yourpassword' with the actual password
-            if (password === '123') {
+//letter4BzzBzz
+            if (password === '') {
                 document.getElementById('blurred-bg').style.filter = 'none'; // Remove blur
                 document.getElementById('passwordModal').style.display = 'none'; // Close modal
             } else {
@@ -220,7 +271,7 @@
                 tryAgainMessage.style.display = 'block'; // Display try again message
             }
         }
-</script>
+    </script>
 
 </body>
 

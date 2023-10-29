@@ -10,11 +10,11 @@
 
     <style>
         body {
+            cursor: url('data:image/svg+xml,%3Csvg fill="red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"%3E%3Cpath d="M12 21.35l-1.45-1.32C6.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C15.09 3.81 16.76 3 18.5 3 21.58 3 24 5.42 24 8.5c0 3.78-4.4 6.86-8.55 11.54L12 21.35z"%3E%3C/path%3E%3C/svg%3E'), auto;
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: rgba(255, 80, 45, 0.9);
-            /* Semi-transparent black overlay */
+            background: linear-gradient(to bottom, #ffccd2, #ffdde1);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -22,12 +22,44 @@
         }
 
         .confirmation-popup {
-            background-color: #fff;
-            border-radius: 12px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-            padding: 20px;
+            cursor: url('data:image/svg+xml,%3Csvg fill="red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"%3E%3Cpath d="M12 21.35l-1.45-1.32C6.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C15.09 3.81 16.76 3 18.5 3 21.58 3 24 5.42 24 8.5c0 3.78-4.4 6.86-8.55 11.54L12 21.35z"%3E%3C/path%3E%3C/svg%3E'), auto;
             text-align: center;
-            max-width: 400px;
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(255, 218, 185, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards, floatContainer 5s infinite alternate;
+            transition: transform 4s ease, box-shadow 4s ease;
+        }
+
+        .confirmation-popup:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+         @keyframes floatContainer {
+            0% {
+                transform: translateY(0) scale(1);
+                background-color: rgba(255, 255, 255, 0.9);
+                /* Initial background color */
+            }
+
+            100% {
+                transform: translateY(-20px) scale(1.1);
+                background-color: rgba(255, 223, 225, 0.9);
+                /* Slight shade of pink */
+            }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         h2 {
@@ -53,19 +85,27 @@
 
         /* Cute button styles */
         .back-to-home-button {
-            background-color: #ffcc80;
+           background-color: #ff4081;
+            /* Pinkish color */
             color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
+            padding: 12px 24px;
+            border: 2px solid #ff4081;
+            border-radius: 6px;
             cursor: pointer;
-            margin-top: 20px;
             font-weight: bold;
+            text-align: center;
+            font-size: 16px;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
         }
 
         .back-to-home-button:hover {
-            background-color: #ff9966;
+            cursor: url('data:image/svg+xml,%3Csvg fill="red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"%3E%3Cpath d="M12 21.35l-1.45-1.32C6.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C15.09 3.81 16.76 3 18.5 3 21.58 3 24 5.42 24 8.5c0 3.78-4.4 6.86-8.55 11.54L12 21.35z"%3E%3C/path%3E%3C/svg%3E'), auto;
+            background-color: #ff005b;
+            color: #ffffff;
+            transform: scale(1.05);
+            border-color: #ff001e;
         }
+
     </style>
 </head>
 
@@ -74,12 +114,8 @@
         <h2>See You That Day!</h2>
         <p>Your reservation is confirmed, and we can't wait to make it a special day for you!</p>
         <div class="love-messages">
-            <p>You're the light of my life <span class="heart">&#10084;</span></p>
-            <p>Every moment with you is a treasure <span class="heart">&#10084;</span></p>
-            <p>Can't wait to share this special day with you <span class="heart">&#10084;</span></p>
-            <!-- Add more love messages and hearts as needed -->
+            <p><span class="heart">&#10084;</span>See you BzzBzz<span class="heart">&#10084;</span></p>
         </div>
-        <!-- Cute button to go back to the home page -->
         <button class="back-to-home-button" onclick="window.location.href='index.html'">Back to Home Page</button>
     </div>
 </body>

@@ -69,7 +69,6 @@
         }
 
 
-        /* Additional styling for the suggestions card */
         .suggestion-card {
             margin-top: 20px;
             padding: 20px;
@@ -80,26 +79,26 @@
         }
 
         /* Style the suggestions list */
-.suggestion-card ul {
-    list-style: none;
-    padding: 0;
-}
+        .suggestion-card ul {
+            list-style: none;
+            padding: 0;
+        }
 
-.suggestion-card li {
-    margin-bottom: 10px;
-}
+        .suggestion-card li {
+            margin-bottom: 10px;
+        }
 
-/* Style the form steps */
-.form-step {
-    margin-bottom: 20px;
-}
+        /* Style the form steps */
+        .form-step {
+            margin-bottom: 20px;
+        }
 
-/* Style the labels */
-label {
-    display: block;
-    font-size: 18px;
-    margin-bottom: 5px;
-}
+        /* Style the labels */
+        label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
 
 
         @keyframes floatContainer {
@@ -110,7 +109,7 @@ label {
             }
 
             100% {
-                transform: translateY(-10px) scale(1.1);
+                transform: translateY(-5px) scale(1.01);
                 background-color: rgba(255, 223, 225, 0.9);
                 /* Slight shade of pink */
             }
@@ -225,18 +224,19 @@ label {
             transition: border-color 0.5s ease-in-out;
         }
 
-/* Style the submit button */
-#submitBtn {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.5s ease-in-out;
-    margin-top: 10px;
-}
+        /* Style the submit button */
+        #submitBtn {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            transition: background-color 0.5s ease-in-out;
+            margin-top: 10px;
+        }
 
 
 
@@ -250,6 +250,7 @@ label {
             border-radius: 6px;
             cursor: pointer;
             font-weight: bold;
+            text-align: center;
             font-size: 16px;
             transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
         }
@@ -257,13 +258,9 @@ label {
         .navigationButton:hover {
             cursor: url('data:image/svg+xml,%3Csvg fill="red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"%3E%3Cpath d="M12 21.35l-1.45-1.32C6.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C15.09 3.81 16.76 3 18.5 3 21.58 3 24 5.42 24 8.5c0 3.78-4.4 6.86-8.55 11.54L12 21.35z"%3E%3C/path%3E%3C/svg%3E'), auto;
             background-color: #ff005b;
-            /* Darker pink on hover */
             color: #ffffff;
-            /* White text on hover */
             transform: scale(1.05);
-            /* Slight scale increase on hover */
             border-color: #ff001e;
-            /* Border color change on hover */
         }
 
         /* Additional styling for a subtle button animation */
@@ -271,16 +268,20 @@ label {
             outline: none;
             transform: scale(1.05);
         }
+
         /* Center the submit button */
         .form-navigation {
             display: flex;
-            justify-content: space-around; /* Adjust as needed */
+            justify-content: space-around;
+            /* Adjust as needed */
         }
 
         .navigationButton,
         #submitBtn {
-            width: 100px; /* Adjust the width as needed */
-            margin: 10px; /* Adjust the margin as needed */
+            width: 100px;
+            /* Adjust the width as needed */
+            margin: 10px;
+            /* Adjust the margin as needed */
             animation: fadeInUpButtons 1s ease-in-out;
 
         }
@@ -299,6 +300,26 @@ label {
             }
         }
 
+
+        .form-step[data-step="10"] {
+            margin-top: 20px;
+        }
+
+        .form-step[data-step="10"] h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .day-time-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .day-slot,
+        .time-slot {
+            flex: 1;
+            margin-right: 20px;
+        }
     </style>
 
 
@@ -402,15 +423,15 @@ label {
 
                 <!-- Step 7 -->
                 <div class="form-step" data-step="7">
-                    <label for="specialRequest">Special Request:</label>
-                    <textarea id="specialRequest" name="specialRequest"
-                        placeholder="Enter any special requests"></textarea>
+                    <label for="moviesToWatch">Movies to Watch:</label>
+                    <input type="text" id="moviesToWatch" name="moviesToWatch" placeholder="Enter the movies to watch">
                 </div>
 
                 <!-- Step 8 -->
                 <div class="form-step" data-step="8">
-                    <label for="moviesToWatch">Movies to Watch:</label>
-                    <input type="text" id="moviesToWatch" name="moviesToWatch" placeholder="Enter the movies to watch">
+                    <label for="specialRequest">Special Request:</label>
+                    <textarea id="specialRequest" name="specialRequest"
+                        placeholder="Enter any special requests"></textarea>
                 </div>
 
                 <!-- Step 9 -->
@@ -418,6 +439,21 @@ label {
                     <label for="notes">Anything to Keep in Mind:</label>
                     <textarea id="notes" name="notes"
                         placeholder="Enter any additional notes or things to keep in mind"></textarea>
+                </div>
+
+                <!-- Step 10 - Day/Time Slot -->
+                <div class="form-step" data-step="10">
+                    <label for="daySlot">Preferred Day:</label>
+                    <select id="daySlot" name="daySlot">
+                        <option value="monday">Monday</option>
+                        <option value="tuesday">Tuesday</option>
+                        <option value="wednesday">Wednesday</option>
+                        <option value="thursday">Thursday</option>
+                        <option value="friday">Friday</option>
+                    </select>
+
+                    <label for="timeSlot">Preferred Time:</label>
+                    <input type="text" id="timeSlot" name="timeSlot" placeholder="Enter preferred time">
                 </div>
 
                 <!-- Navigation Buttons -->
@@ -431,10 +467,10 @@ label {
         <div class="suggestion-card">
             <h3>Suggestions</h3>
             <ul>
-                <li>Try a relaxing herbal tea during your day.</li>
-                <li>Create a calming playlist for your spa day.</li>
-                <li>Consider aromatherapy for an enhanced experience.</li>
-                <!-- Add more suggestions as needed -->
+                <li>Let us watch some scary movies.</li>
+                <li>Start learning to play FIFA.</li>
+                <li>Let's try cuddling for an extented amount of time.</li>
+                <li>Let's try to sleep and power nap together!</li>
             </ul>
         </div>
     </div>
