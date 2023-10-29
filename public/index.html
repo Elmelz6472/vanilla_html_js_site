@@ -213,18 +213,22 @@
 
     <div class="landing-text">
         <h1>Welcome to GentleTouch Harmony Spa</h1>
-        <p>Indulge in the magic of relaxation where love and tranquility intertwine. Our skilled therapists are here to
-            provide you with a rejuvenating experience like no other.</p>
-        <p>Explore our massage treatments and discover a world of serenity.</p>
-        <button class="cta-button">Book Your Massage</button>
+    <p>Embark on a journey to receive the finest spa and massage experience, where every touch is crafted to perfection, and
+        love and tranquility seamlessly intertwine.</p>
+    <p>Our skilled therapists are dedicated to ensuring you encounter a
+    rejuvenating experience like never before.</p>
+    <p>Explore our exquisite range of massage treatments and immerse yourself in a world of unparalleled serenity.</p>
+
+        <button class="cta-button-disabled" disabled>Book Your Massage</button>
     </div>
 
     <div class="landing-text">
-        <h1>Unwind and Recharge</h1>
-        <p>Escape the hustle and bustle of everyday life. Treat yourself to a day of serenity and self-care. Our expert
-            therapists are dedicated to helping you relax and recharge.</p>
-        <p>Book your massage now and experience the ultimate bliss.</p>
-        <button class="cta-button">Discover Treatments</button>
+        <h1>Day 4 me Package</h1>
+    <p>Indulge in a full day of personalized activities tailored to your passions. Choose from a diverse selection of
+        options to craft a truly special day just for you.</p>
+    <p>Book your 4 Your Day package now and immerse yourself in the ultimate bliss.</p>
+
+        <button class="cta-button" onclick="redirectToTreatmentsPage()">Book a day 4 you package</button>
     </div>
 
 
@@ -248,6 +252,10 @@
 </body>
 
 <script>
+    function redirectToTreatmentsPage() {
+            window.location.href = 'day4me_reservation.html';
+        }
+
      function logout() {
             localStorage.setItem("logged", false);
             window.location.href = 'password.html';

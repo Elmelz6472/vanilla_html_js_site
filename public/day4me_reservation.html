@@ -5,27 +5,313 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Day for Me Reservation</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Add the font-family to the headings and labels */
+        body {
+            cursor: url('data:image/svg+xml,%3Csvg fill="red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"%3E%3Cpath d="M12 21.35l-1.45-1.32C6.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C15.09 3.81 16.76 3 18.5 3 21.58 3 24 5.42 24 8.5c0 3.78-4.4 6.86-8.55 11.54L12 21.35z"%3E%3C/path%3E%3C/svg%3E'), auto;
+            margin: 0;
+            padding: 0;
+            font-family: 'Dancing Script', cursive;
+            background: linear-gradient(to bottom, #ffccd2, #ffdde1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: auto;
+            position: relative;
+
+        }
+
+        nav {
+            background-color: #ff4081;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+            position: fixed;
+            top: 0px;
+            width: 100%;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            cursor: url('data:image/svg+xml,%3Csvg fill="red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"%3E%3Cpath d="M12 21.35l-1.45-1.32C6.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C15.09 3.81 16.76 3 18.5 3 21.58 3 24 5.42 24 8.5c0 3.78-4.4 6.86-8.55 11.54L12 21.35z"%3E%3C/path%3E%3C/svg%3E'), auto;
+            color: #ffb74d;
+        }
+
+
+        .container {
+            width: 80%;
+            text-align: center;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 218, 185, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            margin-top: 100px;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards, floatContainer 5s infinite alternate;
+            transition: transform 4s ease, box-shadow 4s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* Additional styling for the suggestions card */
+        .suggestion-card {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        /* Style the suggestions list */
+.suggestion-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.suggestion-card li {
+    margin-bottom: 10px;
+}
+
+/* Style the form steps */
+.form-step {
+    margin-bottom: 20px;
+}
+
+/* Style the labels */
+label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+
+        @keyframes floatContainer {
+            0% {
+                transform: translateY(0) scale(1);
+                background-color: rgba(255, 255, 255, 0.9);
+                /* Initial background color */
+            }
+
+            100% {
+                transform: translateY(-10px) scale(1.1);
+                background-color: rgba(255, 223, 225, 0.9);
+                /* Slight shade of pink */
+            }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes expandCenter {
+            0% {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            50% {
+                padding: 30px;
+                margin: 20px;
+            }
+
+            100% {
+                padding: 20px;
+                margin: 10px;
+            }
+        }
+
+
+
         h2,
         label,
         input,
         p,
         button,
         li {
-            font-family: 'Dancing Script', cursive;
+            color: #333;
+            transition: color 0.5s ease-in-out;
+            cursor: url('data:image/svg+xml,%3Csvg fill="red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"%3E%3Cpath d="M12 21.35l-1.45-1.32C6.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C15.09 3.81 16.76 3 18.5 3 21.58 3 24 5.42 24 8.5c0 3.78-4.4 6.86-8.55 11.54L12 21.35z"%3E%3C/path%3E%3C/svg%3E'), auto;
+
+        }
+
+        h2,
+        label {
+            font-size: 28px;
+            margin-bottom: 10px;
+            cursor: url('data:image/svg+xml,%3Csvg fill="red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"%3E%3Cpath d="M12 21.35l-1.45-1.32C6.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C15.09 3.81 16.76 3 18.5 3 21.58 3 24 5.42 24 8.5c0 3.78-4.4 6.86-8.55 11.54L12 21.35z"%3E%3C/path%3E%3C/svg%3E'), auto;
+
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #a1d4ff;
+            border-radius: 5px;
+            transition: border-color 0.5s ease-in-out;
+            cursor: url('data:image/svg+xml,%3Csvg fill="red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"%3E%3Cpath d="M12 21.35l-1.45-1.32C6.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C15.09 3.81 16.76 3 18.5 3 21.58 3 24 5.42 24 8.5c0 3.78-4.4 6.86-8.55 11.54L12 21.35z"%3E%3C/path%3E%3C/svg%3E'), auto;
+
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.5s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .reservation-section {
+            animation: fadeInUp 1s ease-in-out;
+            background-color: #ffccd2
+        }
+
+        .suggestion-card {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            resize: vertical;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #a1d4ff;
+            border-radius: 5px;
+            transition: border-color 0.5s ease-in-out;
+        }
+
+/* Style the submit button */
+#submitBtn {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.5s ease-in-out;
+    margin-top: 10px;
+}
+
+
+
+        /* Add these styles to your existing styles */
+        .navigationButton {
+            background-color: #ff4081;
+            /* Pinkish color */
+            color: #fff;
+            padding: 12px 24px;
+            border: 2px solid #ff4081;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .navigationButton:hover {
+            cursor: url('data:image/svg+xml,%3Csvg fill="red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"%3E%3Cpath d="M12 21.35l-1.45-1.32C6.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C15.09 3.81 16.76 3 18.5 3 21.58 3 24 5.42 24 8.5c0 3.78-4.4 6.86-8.55 11.54L12 21.35z"%3E%3C/path%3E%3C/svg%3E'), auto;
+            background-color: #ff005b;
+            /* Darker pink on hover */
+            color: #ffffff;
+            /* White text on hover */
+            transform: scale(1.05);
+            /* Slight scale increase on hover */
+            border-color: #ff001e;
+            /* Border color change on hover */
+        }
+
+        /* Additional styling for a subtle button animation */
+        .navigationButton:focus {
+            outline: none;
+            transform: scale(1.05);
+        }
+        /* Center the submit button */
+        .form-navigation {
+            display: flex;
+            justify-content: space-around; /* Adjust as needed */
+        }
+
+        .navigationButton,
+        #submitBtn {
+            width: 100px; /* Adjust the width as needed */
+            margin: 10px; /* Adjust the margin as needed */
+            animation: fadeInUpButtons 1s ease-in-out;
+
+        }
+
+
+        /* Updated fadeInUp animation for buttons */
+        @keyframes fadeInUpButtons {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
     </style>
+
+
+
+
+
+
 </head>
 
 <body>
-
     <nav>
-        <a href="index.html">Home</a>
-        <!-- <a href="form.html">Reservation</a> -->
+        <a href="index.html">HOME</a>
+        <a href="letter.html">READ ME</a>
         <a href="#" onclick="logout()">Log Out</a>
     </nav>
 
@@ -66,50 +352,80 @@
         }
     </script>
 
-    <!-- Additional Container for Special Surprise Explanation -->
-    <div class="special-surprise-container">
-        <h2>Special Surprise</h2>
-        <p>
-            I have a special surprise planned for you on this day. Without giving away too much,
-            be prepared for an unforgettable and delightful experience that complements your relaxing day!
-        </p>
-    </div>
 
+    <br><br><br><br><br><br><br><br>
     <div class="container">
         <div id="reservationForm" class="reservation-section">
             <h2>Day for Me Reservation</h2>
             <form id="spaForm">
-                <label for="clothesToBring">Clothes to Bring:</label>
-                <input type="text" id="clothesToBring" name="clothesToBring"
-                    placeholder="Enter the clothes you should bring">
+                <!-- Step 1 -->
+                <div class="form-step" data-step="1">
+                    <label for="clothesToBring">Clothes to Bring:</label>
+                    <input type="text" id="clothesToBring" name="clothesToBring"
+                        placeholder="Enter the clothes we should bring">
+                </div>
 
-                <label for="foodToBring">Food to Bring/Cook:</label>
-                <input type="text" id="foodToBring" name="foodToBring"
-                    placeholder="Enter the food you should bring/cook">
+                <!-- Step 2 -->
+                <div class="form-step" data-step="2">
+                    <label for="foodToBring">Food to Bring/Cook:</label>
+                    <input type="text" id="foodToBring" name="foodToBring"
+                        placeholder="Enter the food we should bring/cook">
+                </div>
 
-                <label for="candyToBring">Candy to Bring:</label>
-                <input type="text" id="candyToBring" name="candyToBring" placeholder="Enter the candy you should bring">
+                <!-- Step 3 -->
+                <div class="form-step" data-step="3">
+                    <label for="candyToBring">Candy to Bring:</label>
+                    <input type="text" id="candyToBring" name="candyToBring"
+                        placeholder="Enter the candy we should bring">
+                </div>
 
-                <label for="chocolateToBring">Chocolate to Bring:</label>
-                <input type="text" id="chocolateToBring" name="chocolateToBring"
-                    placeholder="Enter the chocolate you should bring">
+                <!-- Step 4 -->
+                <div class="form-step" data-step="4">
+                    <label for="chocolateToBring">Chocolate to Bring:</label>
+                    <input type="text" id="chocolateToBring" name="chocolateToBring"
+                        placeholder="Enter the chocolate we should bring">
+                </div>
 
-                <label for="extraBlankets">Extra Blankets:</label>
-                <input type="text" id="extraBlankets" name="extraBlankets"
-                    placeholder="Specify if you need extra blankets">
+                <!-- Step 5 -->
+                <div class="form-step" data-step="5">
+                    <label for="blanketToBring">Extra Blanket:</label>
+                    <input type="text" id="blanketToBring" name="blanketToBring"
+                        placeholder="Enter any extra blanket needed">
+                </div>
 
-                <label for="iceCreamToBring">Ice Cream to Bring:</label>
-                <input type="text" id="iceCreamToBring" name="iceCreamToBring"
-                    placeholder="Enter the ice cream you should bring">
+                <!-- Step 6 -->
+                <div class="form-step" data-step="6">
+                    <label for="iceCreamToBring">Ice Cream to Bring:</label>
+                    <input type="text" id="iceCreamToBring" name="iceCreamToBring"
+                        placeholder="Enter the ice cream we should bring">
+                </div>
 
-                <label for="specialRequests">Special Requests:</label>
-                <input type="text" id="specialRequests" name="specialRequests" placeholder="Any special requests">
+                <!-- Step 7 -->
+                <div class="form-step" data-step="7">
+                    <label for="specialRequest">Special Request:</label>
+                    <textarea id="specialRequest" name="specialRequest"
+                        placeholder="Enter any special requests"></textarea>
+                </div>
 
-                <label for="otherUsefulThings">Other Useful Things:</label>
-                <input type="text" id="otherUsefulThings" name="otherUsefulThings"
-                    placeholder="Anything else that might be useful for your day">
+                <!-- Step 8 -->
+                <div class="form-step" data-step="8">
+                    <label for="moviesToWatch">Movies to Watch:</label>
+                    <input type="text" id="moviesToWatch" name="moviesToWatch" placeholder="Enter the movies to watch">
+                </div>
 
-                <button type="submit">Submit</button>
+                <!-- Step 9 -->
+                <div class="form-step" data-step="9">
+                    <label for="notes">Anything to Keep in Mind:</label>
+                    <textarea id="notes" name="notes"
+                        placeholder="Enter any additional notes or things to keep in mind"></textarea>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="form-navigation">
+                    <button type="button" class="navigationButton" onclick="prevStep()">Previous</button>
+                    <button type="button" class="navigationButton" onclick="nextStep()">Next</button>
+                    <button type="submit" id="submitBtn">Submit</button>
+                </div>
             </form>
         </div>
         <div class="suggestion-card">
@@ -124,58 +440,102 @@
     </div>
 
 
+    <script type="module">
+        // Import Firebase SDKs
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+        import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
 
-<script type="module">
-    // Import Firebase SDKs
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
-    import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAp4xLElYz5eEcrnfjtQGO8fYrHli-YrXg",
+            authDomain: "spaa-dc965.firebaseapp.com",
+            projectId: "spaa-dc965",
+            storageBucket: "spaa-dc965.appspot.com",
+            messagingSenderId: "394735502752",
+            appId: "1:394735502752:web:266ede15ac71454bee90c5",
+            measurementId: "G-TJTDYSW8N1"
+        };
 
-    // Firebase configuration
-    const firebaseConfig = {
-        apiKey: "AIzaSyAp4xLElYz5eEcrnfjtQGO8fYrHli-YrXg",
-        authDomain: "spaa-dc965.firebaseapp.com",
-        projectId: "spaa-dc965",
-        storageBucket: "spaa-dc965.appspot.com",
-        messagingSenderId: "394735502752",
-        appId: "1:394735502752:web:266ede15ac71454bee90c5",
-        measurementId: "G-TJTDYSW8N1"
-    };
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase();
 
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const database = getDatabase();
+        // Get form and steps
+        const spaForm = document.getElementById('spaForm');
+        const formSteps = Array.from(document.querySelectorAll('.form-step'));
+        const submitBtn = document.getElementById('submitBtn');
 
-    // Function to submit form data to Firebase
-    function submitForm(e) {
-        e.preventDefault(); // Prevent default form submission
+        // Current step tracker
+        let currentStep = 1;
 
-        const form = document.getElementById('spaForm');
-        const formData = new FormData(form);
+        // Function to show current step
+        function showStep(step) {
+            formSteps.forEach((stepElement) => {
+                stepElement.style.display = 'none';
+            });
 
-        // Convert FormData to JSON
-        const data = {};
-        formData.forEach((value, key) => {
-            data[key] = value;
-        });
+            const currentStepElement = document.querySelector(`[data-step="${step}"]`);
+            if (currentStepElement) {
+                currentStepElement.style.display = 'block';
+            }
 
-        // Push data to Firebase
-        const reservationsRef = ref(database, 'day4me_reservations');
-        push(reservationsRef, data);
+            // Toggle submit button visibility
+            submitBtn.style.display = step === formSteps.length ? 'block' : 'none';
+        }
 
-        console.log("Form submitted");
+        // Function to navigate to the next step
+        window.nextStep = function () {
+            if (currentStep < formSteps.length) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        };
 
-        // Redirect to confirmation page
-        window.location.href = 'confirmation.html';
+        // Function to navigate to the previous step
+        window.prevStep = function () {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        };
 
-        // Optionally, you can reset the form after submission
-        form.reset();
-    }
+        // Function to submit form data to Firebase
+        function submitForm(e) {
+            e.preventDefault(); // Prevent default form submission
 
-    // Add an event listener to the form's submit event
-    const spaForm = document.getElementById('spaForm');
-    spaForm.addEventListener('submit', submitForm);
-</script>
+            const formData = new FormData(spaForm);
 
+            // Convert FormData to JSON
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+
+            console.log(data)
+
+            // Push data to Firebase
+            const reservationsRef = ref(database, 'day4me_reservations');
+            console.log(reservationsRef)
+            set(reservationsRef, data);
+
+
+
+            console.log("Form submitted to Firebase");
+
+            // Redirect to confirmation page
+            window.location.href = 'confirmation.html';
+
+            // Optionally, you can reset the form after submission
+            spaForm.reset();
+        }
+
+        // Add an event listener to the form's submit event
+        spaForm.addEventListener('submit', submitForm);
+
+        // Show the initial step
+        showStep(currentStep);
+    </script>
 
 </body>
 
