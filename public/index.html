@@ -251,6 +251,21 @@
 
 </body>
 
+
+<script>
+    const isLogged = localStorage.getItem("logged") === "true";
+    if (!isLogged) {
+        window.location.href = 'password.html';
+    }
+
+    function logout() {
+        localStorage.setItem("logged", false);
+        window.location.href = 'password.html';
+    }
+</script>
+
+
+
 <script>
     function redirectToTreatmentsPage() {
             window.location.href = 'day4me_reservation.html';
