@@ -103,6 +103,9 @@
     margin: 0;
     background: linear-gradient(to bottom, #ffccd2, #ffdde1);
     overflow: hidden;
+            position: relative;
+
+
         }
 
         #blurred-bg {
@@ -196,8 +199,6 @@
         <div class="letter-container">
             <p>Hi BzzBzz</p>
 
-            <p>I hope that this letter finds you well.</p>
-
             <p>Crazy few weeks ayy. I think we can both agree that these past few days haven't been the best for either
                 of us. We had
                 so much things to do we haven't really taken the time to connect with each other like we used to before.
@@ -216,6 +217,7 @@
                 adventures that
                 await. Take care and talk to you soon.</p>
 
+
             <p>It's as you said during the summer, you're my favorite person! And I can only wish the best for the
                 future 🐝</p>
 
@@ -223,6 +225,11 @@
                 <p class="note">PS: It's seriously one of the best pics we have, tbh</p>
                 <p class="closure">Le Melzzz</p>
             </div>
+
+            <p>
+                Love you ❤️❤️❤️
+            </p>
+
         </div>
 
         <div class="return-button">
@@ -249,7 +256,7 @@
         function toggleOpacity() {
             var letterContainer = document.querySelector('.letter-container');
             var currentOpacity = parseFloat(window.getComputedStyle(letterContainer).opacity);
-            letterContainer.style.opacity = currentOpacity === 0.95 ? 0.25 : 0.95;
+            letterContainer.style.opacity = currentOpacity === 0.95 ? 0.01 : 0.95;
         }
 
 
@@ -262,8 +269,8 @@
             var tryAgainMessage = document.getElementById('tryAgainMessage');
             var password = passwordInput.value;
 
-//letter4BzzBzz
-            if (password === '') {
+
+            if (password === 'letter4BzzBzz') {
                 document.getElementById('blurred-bg').style.filter = 'none'; // Remove blur
                 document.getElementById('passwordModal').style.display = 'none'; // Close modal
             } else {

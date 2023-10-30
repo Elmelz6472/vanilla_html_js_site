@@ -56,7 +56,7 @@ window.checkPassword = () => {
         "you could try induction mathematique"
     ];
 
-    const pass = "++InfiniteLoopOfLoveForBzzBzz";
+    const pass = "++InfiniteLoopOfLoveBzzBzz";
     let correctCharsCount = 0;
 
     for (let i = 0; i < enteredPassword.length && i < pass.length; i++) {
@@ -74,7 +74,7 @@ window.checkPassword = () => {
         const randomIndex = Math.floor(Math.random() * playfulSentences.length);
         const randomSentence = `${playfulSentences[randomIndex]} (${randomIndex + 1}/${playfulSentences.length})`;
         errorMessageElement.textContent = randomSentence;
-        correctCharsElement.textContent = `Correct characters: ${correctCharsCount}/?`;
+        correctCharsElement.textContent = `Correct characters: ${correctCharsCount}/26`;
     }
 };
 
