@@ -553,18 +553,19 @@
 
             // Push data to Firebase
             const reservationsRef = ref(database, 'day4me_reservations');
-            console.log(reservationsRef)
-            set(reservationsRef, data);
+            set(reservationsRef, data)
+                .then(() => {
+                    console.log("Form submitted to Firebase");
 
+                    // Redirect to confirmation page
+                    window.location.href = 'confirmation.html';
 
-
-            console.log("Form submitted to Firebase");
-
-            // Redirect to confirmation page
-            window.location.href = 'confirmation.html';
-
-            // Optionally, you can reset the form after submission
-            spaForm.reset();
+                    // Optionally, you can reset the form after submission
+                    spaForm.reset();
+                })
+                .catch(error => {
+                    console.error("Error submitting form to Firebase:", error);
+                });
         }
 
         // Add an event listener to the form's submit event
